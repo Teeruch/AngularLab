@@ -11,7 +11,7 @@
   <tbody>
     <tr *ngFor="let product of products, let i = index">
       <td>{{ i+1 }}</td>
-      <td>{{ product.productId | code:'5' }}</td>
+      <td>{{ product.productCode | code:'5' }}</td>
       <td>{{ product.productName | lowercase | uppercase }}</td>
       <td>
           <span class="price"
