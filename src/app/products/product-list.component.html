@@ -1,24 +1,32 @@
-
-<div class="item" *ngFor="let product of products , let i = index" >
-  {{i+1 | code: 4 }}
-  <span>{{ product.productCode }}</span>
-  <span>{{ product.productName}}</span>
-  <!-- <span [ngClass]="{'low-price': product.price < 10, 'high-price': product.price >= 10}">
-    {{ product.price }}
-  </span> -->
-
-  <span class="price" 
-    [ngClass]="formatPrice(product.price)">
-    {{ product.price | number: '2.2-2'}}
-  </span>
-  <span *ngIf="product.price < 300; else high">Low</span>
-  <ng-template #high>
-    <span>High</span>
-  </ng-template>
-  <!-- <span [ngSwitch]="product.price">
-      <span *ngSwitchCase="8.9">Low</span>
-      <span *ngSwitchDefault>High</span>
-  </span> -->
-
-  <button class='button' (click)="testService()">Test Service</button>
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products, let i = index">
+      <td>{{ i+1 }}</td>
+      <td>{{ product.productId | code:'5' }}</td>
+      <td>{{ product.productName | lowercase | uppercase }}</td>
+      <td>
+          <span class="price"
+           [ngClass]="{'low-price': product.price<300}">
+            {{ product.price | number:'2.2-2' }}
+          </span>
+      </td>
+      <td>
+          <span *ngIf="product.price<300; else high">
+            LOW
+          </span>
+          <ng-template #high>
+          <span>HIGH</span>
+          </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>

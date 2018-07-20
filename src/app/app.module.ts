@@ -8,6 +8,12 @@ import { FooterComponent } from './inc/footer.component';
 import { ContentComponent } from './content/content.component';
 import { CounterComponent } from './counter/counter.component';
 import { ProductModule } from './products/product.module';
+import { RouterModule, Routes } from '../../node_modules/@angular/router';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'products', pathMatch: 'full' },
+  { path: '**', redirectTo: 'products', pathMatch: 'full'}
+];
 
 @NgModule({
   declarations: [
@@ -22,7 +28,8 @@ import { ProductModule } from './products/product.module';
     BrowserModule,  
     FormsModule,
     ProductModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [

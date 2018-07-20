@@ -16,10 +16,13 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
       this.productService.getAll().subscribe((products) => {
-        console.log(products)
+            console.log(products)
 
-        this.products = products
-      })
+            this.products = products
+        },
+        (error) => { console.log(error)},
+        () => { console.log('complete')}
+        )
   }
 
   formatPrice(price) {

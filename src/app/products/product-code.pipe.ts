@@ -6,6 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ProductCodePipe implements PipeTransform {
 
   transform(value: number, args: any[]): any {
+    if(!value) return null;
     if(value > 999) return value.toString()
     
     let paddingLength = 4
