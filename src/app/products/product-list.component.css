@@ -1,0 +1,14 @@
+.item span {
+    display: inline-block;
+    max-width:250px;
+    min-width:200px;
+    margin:10px;
+}
+
+.low-price {
+    color : red;
+}
+
+.high-price {
+    color : green;
+}
