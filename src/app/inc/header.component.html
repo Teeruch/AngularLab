@@ -5,15 +5,22 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link"  href="#" (click)="selectMenu(1)">Welcome</a>
+          <li class="nav-item">
+            <a class="nav-link"  href="#" >Welcome</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="#" (click)="selectMenu(2)">Products</a>
+            <a class="nav-link"  href="#" 
+              [routerLink]="['/products']" 
+              [routerLinkActive]="active"
+              [routerLinkActiveOptions]="{exact:true}">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="#" (click)="selectMenu(3)">Contact Us</a>
+            <a class="nav-link"  href="#" 
+              [routerLink]="['/products/new']"
+              [routerLinkActive]="active"
+              [routerLinkActiveOptions]="{exact:true}" >Contact Us</a>
           </li>
         </ul>
   </div>
+  <button (click)="goToNewProduct()" class='btn btn-success'>Add New Product</button>
 </nav>
