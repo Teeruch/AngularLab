@@ -9,6 +9,7 @@ import { ContentComponent } from './content/content.component';
 import { CounterComponent } from './counter/counter.component';
 import { ProductModule } from './products/product.module';
 import { RouterModule, Routes } from '../../node_modules/@angular/router';
+import { NewProductComponent } from './products/new-product.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },
@@ -22,7 +23,7 @@ const routes: Routes = [
     FooterComponent,
     ContentComponent,
     CounterComponent,
-    
+    NewProductComponent
   ],
   imports: [
     BrowserModule,  
