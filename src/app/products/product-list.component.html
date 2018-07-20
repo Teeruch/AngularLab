@@ -1,5 +1,5 @@
 
-<div class="item" *ngFor="let product of products, let i = index" >
+<div class="item" *ngFor="let product of products , let i = index" >
   {{i+1 | code: 4 }}
   <span>{{ product.productCode }}</span>
   <span>{{ product.productName}}</span>
@@ -11,7 +11,7 @@
     [ngClass]="formatPrice(product.price)">
     {{ product.price | number: '2.2-2'}}
   </span>
-  <span *ngIf="product.price < 10; else high">Low</span>
+  <span *ngIf="product.price < 300; else high">Low</span>
   <ng-template #high>
     <span>High</span>
   </ng-template>
